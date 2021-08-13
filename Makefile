@@ -6,8 +6,8 @@ setup:
 clean:
 	gradlew clean
 
-build: clean
-	gradlew build
+build:
+	gradlew clean build
 
 install: clean
 	gradlew install
@@ -25,6 +25,6 @@ lint:
 	gradlew checkstyleMain checkstyleTest
 
 check-updates:
-	gradlew dependencyUpdates
+	topgradlew dependencyUpdates
 
 build-run: build run
