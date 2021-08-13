@@ -36,4 +36,8 @@ jobs:
         USERNAME: ${{ github.actor }}
         TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
+    - name: Setup Java JDK
+      uses: actions/setup-java@v2.2.0
+
+        
         
