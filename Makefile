@@ -7,7 +7,7 @@ clean:
 	gradlew clean
 
 build: clean
-	gradlew build
+	gradlew clean build
 
 install: clean
 	gradlew install
