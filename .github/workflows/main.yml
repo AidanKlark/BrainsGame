@@ -16,3 +16,6 @@ jobs:
           java-version: '15'
       - name: Build with Gradle
         run: make build
+      - name: Setup Java JDK
+        uses: actions/setup-java@v2.2.0
+
