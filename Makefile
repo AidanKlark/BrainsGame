@@ -6,8 +6,9 @@ setup:
 clean:
 	./gradlew clean
 
-build: clean
-	./gradlew build
+build: 
+	chmod +x gradlew
+	./gradlew clean build
 
 install: clean
 	./gradlew install
