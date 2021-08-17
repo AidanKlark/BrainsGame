@@ -14,6 +14,4 @@ jobs:
           java-version: '15'
           distribution: 'adopt'
       - name: Install with Gradle
-        run: chmod +x gradle
-      - name: Install with Gradle
-        run: make install
+        run: chmod +x gradlew make install
