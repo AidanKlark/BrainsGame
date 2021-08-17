@@ -7,7 +7,7 @@ clean:
 	./gradlew clean
 
 build: 
-	chmod +x gradlew ./gradlew clean build
+	./gradlew clean build
 	
 
 install: clean
