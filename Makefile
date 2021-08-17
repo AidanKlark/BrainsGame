@@ -1,30 +1,30 @@
 .DEFAULT_GOAL := build-run
 
 setup:
-	gradlew wrapper --gradle-version 7.1.1
+	./gradlew wrapper --gradle-version 6.8.3
 
 clean:
-	gradlew clean
+	./gradlew clean
 
-build:
-	./gradlew clean build
+build: clean
+	./gradlew build
 
 install: clean
-	gradlew install
+	./gradlew install
 
 run-dist:
-	build/install/app/bin/app
+	./build/install/java-package/bin/java-package
 
 run:
-	gradlew run
+	./gradlew run
 
 test:
-	gradlew test
+	./gradlew test
 
 lint:
-	gradlew checkstyleMain checkstyleTest
+	./gradlew checkstyleMain checkstyleTest
 
 check-updates:
-	topgradlew dependencyUpdates
+	./gradlew dependencyUpdates
 
 build-run: build run
