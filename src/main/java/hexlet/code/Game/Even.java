@@ -6,41 +6,62 @@ import java.util.Scanner;
 
 public class Even {
 
-    String right;
+    static String NAME = Cli.name();
+    static String INSTRUCTION = "Answer 'yes' if number even otherwise answer 'no'.";
+    static String right;
+    static String playerAnswer;
+    static String answer;
+    static String YES = "yes";
+    static String NO = "no";
+    static int n = 3;                                                                       //Количество верных ответов
+    static int count = 0;
 
-    Random random = new Random();
-    int a = Integer.valueOf(random.nextInt(100 + 1));
+    public static void even() {
 
-    public static void even(String right, int a) {
+        System.out.println(INSTRUCTION);
+        conclusion();
 
-        Cli.name();
+    }
 
-        System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
-        System.out.println("Question: " + a);
+    public static void conclusion() {
 
-        Scanner scanner = new Scanner(System.in);
-        String ans = scanner.nextLine();
-        System.out.println("Your answer: " + ans);
+        boolean allAnswersTrue = true;
 
-        Even.answer();
+        do {
+            ++count;
 
-        if (right.equals(ans)) {
-            System.out.print("Correct!");
-            System.out.print("Congratulations, " + Cli.name() + "!");
-        } else {
-            System.out.printf("'%d' is wrong answer ;(. Correct answer was '%d'.", ans, right);
-            System.out.println("Question: " + a);
+            answer = correctAnswer();
+            playerAnswer = task();
+
+            if(answer.equals(playerAnswer)) {
+                System.out.println("Correct!");
+            }
+            else {
+                System.out.printf("%s is wrong answer ;(. Correct answer was %s.", playerAnswer, answer);
+                allAnswersTrue = false;
+            }
+        } while (count < n) ;
+
+        if (allAnswersTrue) {
+            System.out.printf("Congratulations, %s !", NAME);
         }
     }
 
-    private static String answer(int a, String right) {
+    public static String correctAnswer() {
 
-            if (a % 2 == 0) {
-                right = "yes";
-            }
-            else
-                right = "no";
+        answer = genRandom() ? YES : NO;
+    }
 
-            return right;
+    static int genRandom() {
+
+        Random random = new Random();
+
+        return Integer.valueOf(random.nextInt(100 + 1));
+    }
+
+    public static String task() {
+
+        System.out.print("Your answer: ");
+        return new Scanner(System.in).nextLine();
     }
 }
