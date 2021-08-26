@@ -3,18 +3,20 @@ package hexlet.code;
 import hexlet.code.Game.Even;
 import java.util.Scanner;
 
-
 public class App {
 
   public static void main(String[] args) {
 
-    System.out.println("Please enter the game number and press Enter. \n" + "1 - Greet \n" + "2 - Even \n" + "0 - Exit");
+    System.out.println("""
+            Please enter the game number and press Enter.\s
+            1 - Greet\s
+            2 - Even\s
+            0 - Exit""");
 
     Scanner input = new Scanner(System.in);
     int number = input.nextInt();
 
-    switch (number)
-    {
+    switch (number) {
     case 1 -> Cli.name();
     case 2 -> Even.even();
     /*case 3 ->

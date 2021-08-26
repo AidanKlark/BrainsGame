@@ -6,14 +6,15 @@ import java.util.Scanner;
 
 public class Even {
 
-    static String NAME = Cli.name();
-    static String INSTRUCTION = "Answer 'yes' if number even otherwise answer 'no'.";
-    static String playerAnswer;
-    static String answer;
-    static String YES = "yes";
-    static String NO = "no";
-    static int n = 3;                                                                       //Количество верных ответов
-    static int number;
+    private static final String NAME = Cli.name();
+    private static final String INSTRUCTION = "Answer 'yes' if number even otherwise answer 'no'.";
+    private static String playerAnswer;
+    private static String answer;
+    private static String yes = "yes";
+    private static String no = "no";
+    private static final int ATTEMPT = 3;
+    private static int number;
+    private static final int MAX_NUMBER = 100;
 
     public static void even() {
 
@@ -35,14 +36,14 @@ public class Even {
             answer = correctAnswer();
             playerAnswer = task();
 
-            if(answer.equals(playerAnswer)) {
+            if (answer.equals(playerAnswer)) {
                 System.out.println("Correct!");
-            }
-            else {
-                System.out.printf("%s is wrong answer ;(. Correct answer was %s.\n Let's try again, %s!", playerAnswer, answer, NAME);
+            } else {
+                System.out.printf("%s is wrong answer ;(. Correct answer was %s.\n Let's try again, %s!",
+                        playerAnswer, answer, NAME);
                 allAnswersTrue = false;
             }
-        } while (count < n) ;
+        } while (count < ATTEMPT);
 
         if (allAnswersTrue) {
             System.out.printf("Congratulations, %s!", NAME);
@@ -51,14 +52,14 @@ public class Even {
 
     public static String correctAnswer() {
 
-        answer = isEven() ? YES : NO;
+        answer = isEven() ? yes : no;
         return answer;
     }
 
     static int genRandom() {
 
         Random random = new Random();
-        return random.nextInt(100 + 1);
+        return random.nextInt(MAX_NUMBER + 1);
     }
 
     public static String task() {
