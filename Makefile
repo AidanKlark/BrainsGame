@@ -1,15 +1,30 @@
-install:	
-	./gradlew clean install
+.DEFAULT_GOAL := build-run
 
-run-dist:	
+setup:
+	./gradlew wrapper --gradle-version 7.1.1
+
+clean:
+	./gradlew clean
+
+build: 
+	./gradlew clean build
+
+install: clean
+	./gradlew install
+
+run-dist:
 	./build/install/app/bin/app
 
-check-updates:	
+run:
+	./gradlew run
+
+test:
+	./gradlew test
+
+lint:
+	./gradlew checkstyleMain checkstyleTest
+
+check-updates:
 	./gradlew dependencyUpdates
-
-lint:	
-	./gradlew checkstyleMain
-
-.PHONY: build
-build:	
-	./gradlew clean build
+	
+build-run: build run

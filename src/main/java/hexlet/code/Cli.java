@@ -15,4 +15,9 @@ public class Cli {
 
         return name;
     }
+
+    public static String playerAnswer() {
+        System.out.print("Your answer: ");
+        return new Scanner(System.in).nextLine();
+    }
 }
