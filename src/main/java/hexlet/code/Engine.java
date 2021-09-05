@@ -5,7 +5,7 @@ import hexlet.code.Game.IGame;
 public class Engine {
 
     private static final String NAME = Cli.name();
-    private final static int ATTEMPT = 3;
+    private static final int ATTEMPT = 3;
 
     public static void play(IGame game) {
         game.showInstruction();

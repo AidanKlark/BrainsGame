@@ -5,6 +5,13 @@ import hexlet.code.Game.Even;
 import java.util.Scanner;
 
 public class App {
+  public static final int GREET = 1;
+  public static final int EVEN = 2;
+  public static final int CALC = 3;
+  public static final int GCD = 4;
+  public static final int PROGRESSION = 5;
+  public static final int PRIME = 6;
+  public static final int EXIT = 0;
 
   public static void main(String[] args) {
 
@@ -20,9 +27,9 @@ public class App {
     int number = input.nextInt();
 
     switch (number) {
-    case 1 -> Cli.name();
-    case 2 -> Engine.play(new Even());
-    case 3 -> Engine.play(new Calc());
+      case GREET -> Cli.name();
+      case EVEN -> Engine.play(new Even());
+      case CALC -> Engine.play(new Calc());
     /*case 4 ->
     case 5 ->
     case 6 -> */

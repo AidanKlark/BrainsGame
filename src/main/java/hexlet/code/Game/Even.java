@@ -1,6 +1,6 @@
 package hexlet.code.Game;
 
-public class Even implements IGame{
+public class Even implements IGame {
 
     private static final String INSTRUCTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
@@ -12,23 +12,23 @@ public class Even implements IGame{
     }
 
     @Override
-    public String getAnswer() {
+    public final String getAnswer() {
         return answer;
     }
 
     @Override
-    public void initGame() {
+    public final void initGame() {
         number = IGame.genRandom();
         answer = isEven() ? YES : NO;
     }
 
     @Override
-    public void showInstruction() {
+    public final void showInstruction() {
         System.out.println(INSTRUCTION);
     }
 
     @Override
-    public void showQuestion() {
+    public final void showQuestion() {
         System.out.printf("Question: %d\n", number);
     }
 }

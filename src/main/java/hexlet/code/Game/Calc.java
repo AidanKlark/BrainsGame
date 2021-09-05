@@ -6,19 +6,19 @@ public class Calc implements IGame {
     private static String randOper;
     private static int num1;
     private static int num2;
-    private static final String addition = "+";
-    private static final String subtraction = "-";
-    private static final String multiplication = "*";
+    private static final String ADDITION = "+";
+    private static final String SUBTRACTION = "-";
+    private static final String MULTIPLICATION = "*";
     private static int numbers;
     private static String answer;
 
     @Override
-    public String getAnswer() {
+    public final String getAnswer() {
         return answer;
     }
 
     @Override
-    public void initGame() {
+    public final void initGame() {
         num1 = IGame.genRandom();
         num2 = IGame.genRandom();
         randOper = randCalculation();
@@ -26,17 +26,17 @@ public class Calc implements IGame {
     }
 
     @Override
-    public void showQuestion() {
-        System.out.printf("Question: %d %s %d\n", num1, randOper ,num2);
+    public final void showQuestion() {
+        System.out.printf("Question: %d %s %d\n", num1, randOper, num2);
     }
 
     @Override
-    public void showInstruction() {
+    public final void showInstruction() {
         System.out.println(INSTRUCTION);
     }
 
     public static String randCalculation() {
-        String[] operation = new String[] {"+","-","*"};
+        String[] operation = new String[] {"+", "-", "*"};
 
         randOper = operation[IGame.genRandom() % operation.length];
         return randOper;
@@ -44,15 +44,15 @@ public class Calc implements IGame {
 
     public static int calculation() {
 
-        if (randOper.equals(addition)) {
+        if (randOper.equals(ADDITION)) {
             numbers = num1 + num2;
         }
 
-        if (randOper.equals(subtraction)) {
+        if (randOper.equals(SUBTRACTION)) {
             numbers = num1 - num2;
         }
 
-        if (randOper.equals(multiplication)) {
+        if (randOper.equals(MULTIPLICATION)) {
             numbers = num1 * num2;
         }
 
