@@ -30,6 +30,7 @@ public class Engine {
                         playerAnswer, answer, NAME);
                 allAnswersTrue = false;
             }
+
         } while (count < ATTEMPT);
 
         if (allAnswersTrue) {

@@ -7,7 +7,7 @@ public class Even implements IGame {
     private static int number;
     private static String answer;
 
-    public static boolean isEven() {
+    private static boolean isEven() {
         return number % 2 == 0;
     }
 

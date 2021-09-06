@@ -28,7 +28,7 @@ public class GCD implements IGame {
         System.out.println(INSTRUCTION);
     }
 
-    public final int findGCD(int a, int b) {
+    private int findGCD(int a, int b) {
 
         while (b != 0) {
             int tmp = a % b;

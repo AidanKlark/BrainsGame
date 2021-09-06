@@ -35,14 +35,14 @@ public class Calc implements IGame {
         System.out.println(INSTRUCTION);
     }
 
-    public static String randCalculation() {
+    private static String randCalculation() {
         String[] operation = new String[] {"+", "-", "*"};
 
         randOper = operation[IGame.genRandom() % operation.length];
         return randOper;
     }
 
-    public static int calculation() {
+    private static int calculation() {
 
         if (randOper.equals(ADDITION)) {
             numbers = num1 + num2;
