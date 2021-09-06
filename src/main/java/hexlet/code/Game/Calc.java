@@ -2,13 +2,13 @@ package hexlet.code.Game;
 
 public class Calc implements IGame {
     private static final String INSTRUCTION = "What is the result of the expression?";
+    private static final String ADDITION = "+";
+    private static final String SUBTRACTION = "-";
+    private static final String MULTIPLICATION = "*";
 
     private static String randOper;
     private static int num1;
     private static int num2;
-    private static final String ADDITION = "+";
-    private static final String SUBTRACTION = "-";
-    private static final String MULTIPLICATION = "*";
     private static int numbers;
     private static String answer;
 
