@@ -1,6 +1,7 @@
 package hexlet.code.Game;
 
 public class Calc implements IGame {
+
     private static final String INSTRUCTION = "What is the result of the expression?";
     private static final String ADDITION = "+";
     private static final String SUBTRACTION = "-";

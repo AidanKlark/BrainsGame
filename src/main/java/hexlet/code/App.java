@@ -1,13 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.Game.Calc;
-import hexlet.code.Game.Even;
-import hexlet.code.Game.GCD;
-import hexlet.code.Game.Progression;
-
+import hexlet.code.Game.*;
 import java.util.Scanner;
 
 public class App {
+
   public static final int GREET = 1;
   public static final int EVEN = 2;
   public static final int CALC = 3;
@@ -24,6 +21,7 @@ public class App {
             3 - Calc\s
             4 - GCD\s
             5 - PROGRESSION\s
+            6 - PRIME\s
             0 - Exit""");
 
     Scanner input = new Scanner(System.in);
@@ -36,7 +34,7 @@ public class App {
       case CALC -> Engine.play(new Calc());
       case GCD -> Engine.play(new GCD());
       case PROGRESSION -> Engine.play(new Progression());
-      /*case 6 -> */
+      case PRIME -> Engine.play(new Prime());
       default -> System.out.println("Exit");
     }
   }

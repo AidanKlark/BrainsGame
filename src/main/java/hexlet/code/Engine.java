@@ -26,7 +26,7 @@ public class Engine {
             if (answer.equals(playerAnswer)) {
                 System.out.println("Correct!");
             } else {
-                System.out.printf("%s is wrong answer ;(. Correct answer was %s.\nLet's try again, %s!\n",
+                System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\nLet's try again, %s!\n",
                         playerAnswer, answer, NAME);
                 allAnswersTrue = false;
             }

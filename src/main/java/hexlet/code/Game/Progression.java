@@ -1,6 +1,7 @@
 package hexlet.code.Game;
 
 public class Progression implements IGame {
+
     private static final String INSTRUCTION = "What number is missing in the progression?";
     private static final int LENGTH = 10;
     private static final int[] PROGRESSION = new int[LENGTH];

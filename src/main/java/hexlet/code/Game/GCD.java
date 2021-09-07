@@ -1,6 +1,7 @@
 package hexlet.code.Game;
 
 public class GCD implements IGame {
+
     private static final String INSTRUCTION = "Find the greatest common divisor of given numbers.";
     private static int num1;
     private static int num2;
