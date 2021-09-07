@@ -4,10 +4,11 @@ import hexlet.code.Game.IGame;
 
 public class Engine {
 
-    private static final String NAME = Cli.name();
     private static final int ATTEMPT = 3;
 
     public static void play(IGame game) {
+
+        String NAME = Cli.name();
         game.showInstruction();
 
         int count = 0;
@@ -31,7 +32,7 @@ public class Engine {
                 allAnswersTrue = false;
             }
 
-        } while (count < ATTEMPT);
+        } while (count < ATTEMPT && answer.equals(playerAnswer));
 
         if (allAnswersTrue) {
             System.out.printf("Congratulations, %s!\n", NAME);
