@@ -8,7 +8,7 @@ public class Engine {
 
     public static void play(IGame game) {
 
-        String NAME = Cli.name();
+        String name = Cli.name();
         game.showInstruction();
 
         int count = 0;
@@ -28,14 +28,14 @@ public class Engine {
                 System.out.println("Correct!");
             } else {
                 System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\nLet's try again, %s!\n",
-                        playerAnswer, answer, NAME);
+                        playerAnswer, answer, name);
                 allAnswersTrue = false;
             }
 
         } while (count < ATTEMPT && answer.equals(playerAnswer));
 
         if (allAnswersTrue) {
-            System.out.printf("Congratulations, %s!\n", NAME);
+            System.out.printf("Congratulations, %s!\n", name);
         }
     }
 }
