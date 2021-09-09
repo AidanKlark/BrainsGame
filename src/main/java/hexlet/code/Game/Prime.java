@@ -1,7 +1,5 @@
 package hexlet.code.Game;
 
-import java.math.BigInteger;
-
 public class Prime implements IGame {
 
     private static final String INSTRUCTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
@@ -17,11 +15,7 @@ public class Prime implements IGame {
     @Override
     public final void initGame() {
         numbers = IGame.genRandom();
-        if (prime(numbers)) {
-            answer = YES;
-        } else {
-            answer = NO;
-        }
+        answer = prime() ? YES : NO;
     }
 
     @Override
@@ -34,8 +28,17 @@ public class Prime implements IGame {
         System.out.println(INSTRUCTION);
     }
 
-    private static boolean prime(int a) {
-        BigInteger bigInteger = BigInteger.valueOf(a);
-        return bigInteger.isProbablePrime((int) Math.log(a));
+    private boolean prime() {
+        if (numbers < 2) {
+            return false;
+        }
+
+        for (int i = 2; i < numbers; i++) {
+            if (numbers % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
